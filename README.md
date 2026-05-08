@@ -26,8 +26,8 @@ Observação: É possivel trabalhar de diversas formas, como a instância remota
 Abaixo, detalho o progresso das competências técnicas que estou dominando nesta formação:
 
 ### Core & Infraestrutura
-- [ ] **Fundamentos n8n** Domínio de Nodes, Gatilhos e Estruturas de Dados.
-- [ ] **Deployment** Configuração em ambiente Local e Remoto (Docker/VPS).
+- [x] **Fundamentos n8n** Domínio de Nodes, Gatilhos e Estruturas de Dados.
+- [x] **Deployment** Configuração em ambiente Local e Remoto (Docker/VPS).
 - [ ] **Data Manipulation** Uso avançado de JSON e JavaScript/Luxon para tratamento de dados.
 - [ ] **Resiliência** Tratamento de erros estruturado com *Error Trigger* e retentativas.
 
