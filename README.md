@@ -43,8 +43,6 @@ Abaixo, detalho o progresso das competências técnicas que estou dominando nest
 - [ ] **UX de Conversa:** Desenvolvimento de fluxos conversacionais com TypeBot.
 - [ ] **Hibridização:** Conexão e interoperabilidade entre n8n e Make.
 
----
-
 ## Visão de Mercado
 As soluções desenvolvidas neste repositório visam resolver dores reais, como:
 * **Automação de Atendimento:** Agentes de IA que consultam bases de conhecimento e respondem no WhatsApp.
