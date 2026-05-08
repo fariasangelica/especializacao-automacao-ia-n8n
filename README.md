@@ -1,5 +1,5 @@
 # Formação em Automação em n8n
-> Este projeto documenta minha jornada na formação de **Especialista em Automação n8n. O foco é sair das automações simples e construir arquiteturas robustas que resolvem problemas reais de negócios, utilizando o n8n como orquestrador principal.
+> Este projeto documenta minha jornada na formação de Especialista em Automação n8n. O foco é sair das automações simples e construir arquiteturas robustas que resolvem problemas reais de negócios, utilizando o n8n como orquestrador principal.
 
 ## Instalação e Configuração (Ambiente Local)
 
