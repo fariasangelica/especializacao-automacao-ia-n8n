@@ -1,0 +1,37 @@
+**Nós**
+
+- blocos de construção fundamentais de um fluxo de trabalho. eles realizam uma variedade de ações, incluindo iniciar o fluxo de trabalho, buscar e enviar dados, além de processar e manipular informações.
+- o n8n fornece uma coleção de nós integrados, bem como a capacidade de criar seus próprios nós.
+
+**integrações integradas**
+
+- bibliotecas de nós pré-construídos que vêm com o n8n, prontos para uso imediato.
+
+**nós da comunidade**
+
+- nós criados pela comunidade que podem ser instalados para estender a funcionalidade
+
+**nós personalizados**
+
+- capacidade de criar seus próprios nós para necessidades específicas não atendidas pelos existentes.
+
+
+**Operações de Nós: Gatilhos e Ações**
+
+Gatilhos
+
+Iniciam um fluxo de trabalho em resposta a eventos ou condições específicas em seus serviços. São identificados por um ícone de raio nas pesquisas.
+
+- Respondem a eventos externos
+- Iniciam a execução do fluxo
+- Monitoram mudanças ou condições
+
+Ações
+
+Operações que representam tarefas específicas dentro de um fluxo de trabalho, usadas para manipular dados e interagir com sistemas externos.
+
+- Processam e transformam dados
+- Enviam informações para outros sistemas
+- Executam operações lógicas
+
+![image.png](attachment:865a8128-5aca-497f-a962-e1321450aa70:image.png)
