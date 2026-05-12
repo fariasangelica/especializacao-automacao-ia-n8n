@@ -1,4 +1,6 @@
 # Especialização em Automação em n8n
+![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white)
+![Automation](https://img.shields.io/badge/Workflow-Automated-blue?style=flat-square)
 > Este projeto documenta minha jornada na formação de Especialista em Automação n8n. O foco é sair das automações simples e construir arquiteturas robustas que resolvem problemas reais de negócios, utilizando o n8n como orquestrador principal.
 
 ## Instalação e Configuração (Ambiente Local)
