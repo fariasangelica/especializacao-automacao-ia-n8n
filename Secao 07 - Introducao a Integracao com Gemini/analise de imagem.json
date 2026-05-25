@@ -1,0 +1,71 @@
+{
+  "name": "analise de imagem",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "5dae1489-50fb-44ae-812c-a0ba0369f4da",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "text": "Descreva para mim a imagem a seguir:",
+        "imageUrls": "https://thumbs.dreamstime.com/b/um-casal-l%C3%A9sbico-mais-velho-limpa-seus-foto-do-estoque-da-cozinha-de-apartamento-moderno-333074137.jpg",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "9f19aa7a-958b-45dd-80b6-19f4c73761c5",
+      "name": "Analyze an image",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Zn3z09nCt9WlgppZ",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Analyze an image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "14e82371-98c7-4194-bb26-847fee0ba0ad",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5e2875f0211ea3187edfadf9581a585f4a6833c24ab0471eb78c96e5b3c0d3d1"
+  },
+  "id": "N0Wy0gvkkbYvo5fm",
+  "tags": []
+}
