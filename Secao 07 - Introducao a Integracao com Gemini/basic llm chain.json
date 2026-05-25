@@ -1,0 +1,110 @@
+{
+  "name": "basic llm chain",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -880,
+        -64
+      ],
+      "id": "215c76df-db15-479a-85aa-563ef61da9d3",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -704,
+        -64
+      ],
+      "id": "05aff7a2-524d-4047-b70d-8b2f046c4476",
+      "name": "When chat message received",
+      "webhookId": "1d9501a4-6446-4891-bf00-81f09f0c6165"
+    },
+    {
+      "parameters": {
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        -512,
+        -64
+      ],
+      "id": "cc33bdd2-ff20-4e5e-980b-48499b183d92",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -592,
+        144
+      ],
+      "id": "4c39ffd4-c8fc-4c22-8f2b-7d794833e3be",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Zn3z09nCt9WlgppZ",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "1250b35c-d12a-492d-83b9-d5af2ab8e80d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5e2875f0211ea3187edfadf9581a585f4a6833c24ab0471eb78c96e5b3c0d3d1"
+  },
+  "id": "G1iY5ppytpXQNpXx",
+  "tags": []
+}
