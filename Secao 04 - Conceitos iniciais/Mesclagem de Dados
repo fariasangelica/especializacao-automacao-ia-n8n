@@ -1,0 +1,61 @@
+Guia de Mesclagem de Dados (Merge)
+
+Este documento descreve os métodos e processos para combinar fluxos de dados dentro do sistema, utilizando diferentes nós conforme a necessidade do fluxo de trabalho.
+
+---
+
+1. Métodos de Mesclagem
+Existem três formas principais de combinar informações:
+
+Nó Merge: Utilizado para combinar dados vindos de fontes ou caminhos diferentes em um único fluxo.
+Nó Code: Recomendado para cenários complexos de mesclagem que envolvem múltiplas execuções ou lógica personalizada.
+Nó Compare Datasets: Ideal para comparar dois conjuntos de dados e realizar a união baseada em critérios de correspondência.
+
+---
+
+2. Mesclando Fluxos de Dados Diferentes
+Este processo ocorre quando o fluxo de trabalho se divide e precisa ser reunificado.
+
+Ciclo de Vida:
+1.  Fluxo Dividido: O caminho principal se ramifica em dois ou mais caminhos.
+2.  Processamento: Cada ramificação executa suas tarefas de forma independente.
+3.  Recombinação: Os dados processados são unidos novamente através do nó de mesclagem.
+
+Configuração do Nó Merge:
+Adição: Insira o nó `Merge` após os pontos de processamento.
+Conexão: Conecte as saídas dos nós anteriores às entradas do nó Merge.
+Operação: Defina a regra de união (ex: aguardar todas as entradas ou processar conforme chegam).
+
+---
+
+3. Mesclando de Múltiplas Execuções
+Utilizado quando um processo ocorre em ciclos (loops) e os resultados precisam ser consolidados no final.
+
+Loop: Execução repetida de um nó ou grupo de nós.
+Coleta: O sistema armazena os dados de cada iteração.
+Consolidação (Code): Um nó de código é usado para agregar todos os resultados coletados em uma estrutura única.
+Saída Final: Gera um dataset consolidado com o histórico de todas as execuções.
+
+---
+
+4. Comparando e Mesclando Datasets
+Abordagem técnica para unir dois conjuntos de dados específicos (Input A e Input B).
+
+Operações Disponíveis:
+| Operação | Descrição |
+| :---     | :---      |
+| Append | Adiciona todos os itens do segundo conjunto ao final do primeiro. |
+| Keep Only Matching | Preserva apenas os dados que possuem correspondência em ambos os conjuntos. |
+| Keep Only Non-Matching | Filtra e mantém apenas os itens exclusivos (que não se repetem). |
+| Merge By Fields | Combina os registros baseando-se em campos de chave (ex: ID, Email). |
+
+Diferenciais:
+Saídas Filtradas: Permite direcionar dados para até quatro fluxos diferentes após a comparação.
+Análise de Diferenças: Identifica exatamente o que mudou entre o conjunto de entrada e o de referência.
+
+---
+
+5. Exemplos de Uso
+Sincronização de contatos entre dois CRMs.
+Atualização de inventário comparando lista nova vs. lista antiga.
+Consolidação de relatórios mensais gerados em loops de data.
