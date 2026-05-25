@@ -1,0 +1,109 @@
+{
+  "name": "Gemini",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -336,
+        -352
+      ],
+      "id": "816f64df-a633-41cf-bf41-4b605b9eaa07",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Caulcule corretamente quando é 5+5",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        0,
+        -384
+      ],
+      "id": "51cdbd8f-2681-4510-aee4-e139407ca34e",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -16,
+        -144
+      ],
+      "id": "3723d18c-01da-4506-93dc-0803f93a1e98",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Zn3z09nCt9WlgppZ",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        192,
+        -160
+      ],
+      "id": "28ec9b49-0e9e-454d-98a9-605efb89d36f",
+      "name": "Calculator"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "bfa0a0e5-26dc-496e-a7f7-7003a0b1bc99",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5e2875f0211ea3187edfadf9581a585f4a6833c24ab0471eb78c96e5b3c0d3d1"
+  },
+  "id": "Prh8axhe09aBGIAK",
+  "tags": []
+}
