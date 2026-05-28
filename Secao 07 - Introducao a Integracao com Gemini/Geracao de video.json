@@ -1,0 +1,68 @@
+{
+  "name": "Geracao de video",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2aae00c1-ac4d-40e1-a1a3-20e87dec9d86",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "prompt": "gere um video de um casal lesbico velhinhas em um casa aconchegante",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "2e1fc1a0-c24e-444c-9b0d-a3b9b407da26",
+      "name": "Generate a video",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Zn3z09nCt9WlgppZ",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Generate a video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "42412a3b-eaef-402c-a72b-4526d2b5219d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5e2875f0211ea3187edfadf9581a585f4a6833c24ab0471eb78c96e5b3c0d3d1"
+  },
+  "id": "3wFNUDdZUa38k7af",
+  "tags": []
+}
