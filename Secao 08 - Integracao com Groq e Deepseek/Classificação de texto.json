@@ -1,0 +1,103 @@
+{
+  "name": "Classificação de texto",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "122575ba-ec50-404a-b875-d3729db96bde",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "inputText": "Durante o campeonato de futebol, o time local mostrou grande habilidade e determinação, vencendo uma partida difícil contra um adversário forte. A torcida estava vibrando a cada gol, e os jogadores comemoraram com muito entusiasmo.\"",
+        "categories": {
+          "categories": [
+            {
+              "category": "Esporte",
+              "description": "Refere-se a textos relacionados a atividades físicas, jogos, competições, atletas e eventos esportivos. Pode incluir comentários sobre partidas, treinamentos, estratégias ou conquistas em diversas modalidades esportivas."
+            },
+            {
+              "category": "Educação",
+              "description": "Inclui textos que tratam de escolas, ensino, aprendizagem, metodologias pedagógicas, currículos, professores, alunos e qualquer tópico relacionado ao processo educacional."
+            },
+            {
+              "category": "Tecnologia",
+              "description": "Engloba textos sobre inovações, dispositivos, software, hardware, inteligência artificial, desenvolvimento de aplicativos, gadgets, avanços científicos e tendências tecnológicas."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "bf7e76be-00dc-4a42-ab87-b367518c01fe",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        144,
+        208
+      ],
+      "id": "c3ea0f0e-780c-48bc-92a1-c283038b9b87",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "lUPqfEhJzvlxXKhF",
+          "name": "Groq account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "df214ded-2122-4ff8-9cf8-af2cda928b2a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5e2875f0211ea3187edfadf9581a585f4a6833c24ab0471eb78c96e5b3c0d3d1"
+  },
+  "id": "BqFFL6mp9V1Pqkfu",
+  "tags": []
+}
