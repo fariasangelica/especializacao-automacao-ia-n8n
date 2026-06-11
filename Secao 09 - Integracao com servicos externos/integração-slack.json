@@ -1,0 +1,71 @@
+{
+  "name": "integração-slack",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "230952fe-d37b-4ce9-bb7c-24fa48c8e509",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C0B9NVDT5M4",
+          "mode": "list",
+          "cachedResultName": "social"
+        },
+        "text": "Olá, está faltando te adicionar aqui :)",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "f0509fc7-64bd-44cb-adb4-1609fe27f923",
+      "name": "Send a message",
+      "webhookId": "015de166-1dd6-4904-9901-874eb53482d9",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "7EJpy4PTJ4Zx6fg2",
+          "name": "Slack account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "4ddac6bd-8775-4298-bf02-b7a547a0e8a6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5e2875f0211ea3187edfadf9581a585f4a6833c24ab0471eb78c96e5b3c0d3d1"
+  },
+  "id": "o4sCF7E6aGuHz5CN",
+  "tags": []
+}
